@@ -1,0 +1,13 @@
+.containr-fill{
+    padding: 0px 20px;
+}
+
+.togl-menyu{
+    display: none !important;
+}
+
+.hide-aside{
+    /* transform: translateX(-100%);
+    transition: all .2s linear; */
+    display: none;
+}
