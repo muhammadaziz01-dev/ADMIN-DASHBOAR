@@ -5,7 +5,8 @@ let toglBtn = $('#togl-btn'),
     toglMnyu = $('#togl-menyu'),
     navMenu = $('.nav-menu'),
     asideMenuBtn= $('#navigition-menu'),
-    asideMenyu = $('#aside');
+    asideMenyu = $('#aside'),
+    loginOutList = $('#login-out');
 
 
 
@@ -48,9 +49,25 @@ asideMenuBtn.addEventListener('click',()=>{
 //-------------------------------
 
 
-// (function (){
-//   let token = localStorage.getItem('token');
-//   if(!token){
-//     window.location.href = "../../pages/login.html";
-//   }
-// }())
+
+
+
+(function (){
+  let token = localStorage.getItem('token');
+  if(!token){
+    window.location.href = "../../pages/login.html";
+  }
+}())
+
+
+
+
+// loginOutList.addEventListener('click', ()=>{
+//     logiOut()
+// })
+
+
+function logiOut() {
+    localStorage.removeItem('token');
+    window.location.href = "../../pages/login.html";
+}

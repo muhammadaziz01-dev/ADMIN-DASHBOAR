@@ -3,7 +3,10 @@
 //---------HTML ELAMENTS------------------
 let loginForm = $('#form-login'),
     userName = $('#username'),
-    userPasword = $('#username');
+    userPasword = $('#password');
+
+
+
 
 
 
@@ -14,11 +17,14 @@ const besURL = 'https://fakestoreapi.com';
 
 
 
+
+
+
 //----LOGIN ACTION--------
 async function autharization() {
     const user = {
         username: userName.value,
-        password: userPasword.value,
+        password: userPasword.value
     }
 
     try{
@@ -34,10 +40,16 @@ async function autharization() {
             }); 
 
             let result = await respons.json();
-            console.log(result);
+            localStorage.setItem('token' , result.token);
+
+            if(localStorage.getItem('token')){
+                window.location.href = "../../index.html";
+            }
         }
     }catch(err){
-        console.log(err);
+        alert(err);
+        userName.value="";
+        userPasword.value="";
     }
 }
 
